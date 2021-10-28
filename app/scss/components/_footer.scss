@@ -1,0 +1,108 @@
+.footer {
+  padding: 50px 0 45px;
+  color: $white-text;
+  background-color: #5B6277;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__info {
+    display: flex;
+    max-width: 605px;
+    width: 100%;
+    padding-top: 4px;
+  }
+
+  &__item {
+    flex: 1;
+  }
+  &__item:first-child {
+    margin-right: 5px;
+  }
+
+  &__logo {
+    max-width: 480px;
+    width: 100%;
+    margin-right: 8px;
+  }
+
+  &__logo-inner {
+    margin-bottom: 14px;
+  }
+
+  &__copyright {
+    position: relative;
+    padding-left: 18px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -2px;
+      top: 0;
+      width: 13px;
+      height: 13px;
+      background-image: url('../img/decoration-icons/copyright.svg');
+      @extend %background;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 27px;
+    @extend %openSans-700;
+    font-size: 12px; 
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 19px;
+    height: 19px;
+    @extend %background;
+  }
+
+  &__title--contacts::before {
+    background-image: url('../img/decoration-icons/phone-icon.svg');
+  }
+
+  &__title--address::before {
+    background-image: url('../img/decoration-icons/address-icon.svg');
+  }
+
+  &__title--mail::before {
+    background-image: url('../img/decoration-icons/mail-icon.svg');
+  }
+
+  &__tel-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__tel-link:not(:last-child),
+  &__address-city {
+    margin-bottom: 5px;
+  }
+
+  &__tel-link,
+  &__mail-link {
+    transition: color .3s ease;
+  }
+
+  &__tel-link:hover,
+  &__mail-link:hover {
+    color: #FFE66D;
+  }
+
+  &__address-content {
+    padding-right: 25px;
+    letter-spacing: 0.01em;
+  }
+}
+

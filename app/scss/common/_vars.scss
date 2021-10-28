@@ -1,0 +1,49 @@
+// colors //
+$title: #3A4661;
+$white-text: #fff;
+$brown-text: #3F3F3F;
+$blue-text: #6CA6C1;
+$grey-text: #7281A4;
+// colors //
+
+%background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+%shadow {
+  box-shadow: 0 6px 47px 3px rgba(37, 37, 37, .05);
+}
+
+// fonts //
+%openSans-400 {
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 400;
+}
+
+%openSans-600 {
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 600;
+}
+
+%openSans-700 {
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 700;
+}
+
+%openSans-800 {
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 800;
+}
+
+%playfair-700 {
+  font-family: 'PlayfairDisplay', sans-serif;
+  font-weight: 700;
+}
+
+%playfair-900 {
+  font-family: 'PlayfairDisplay', sans-serif;
+  font-weight: 900;
+}
+// fonts //
