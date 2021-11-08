@@ -1,4 +1,209 @@
 .header {
+  position: relative;
   height: 100vh;
-  @extend %background
+  padding-top: 24px;
+  background-image: url('../img/header-bg-layer.svg'),
+                    url('../img/hero-screen-bg.png');
+  background-size:  cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  &__overlay {
+    position: absolute;
+    top: -24px;
+    bottom: 24px;
+    left: 700px;
+    width: 5000px;
+    background-color: rgba($color: var(--title-color-test), $alpha: .7);
+
+    @include desktop-below {
+      display: none;
+    }
+  }
+
+  &__flex-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top,
+  &__content {
+    z-index: 2;
+  }
+
+  &__top {
+    position: relative;
+    @extend %openSans-600;
+  }
+
+  &__info {
+    align-items: flex-end;
+  }
+
+  &__menu {
+    &-item {
+      &:not(:last-child) {
+        margin-right: 28px;
+      }
+    }
+
+    &-link {
+      position: relative;
+      line-height: 1.78;
+
+      &:hover {
+        color: var(--button-accent-color);
+      }
+
+      &.active::before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: 0;
+        width: 30px;
+        height: 3px;
+        background-color: var(--blue-color);
+      }
+
+      &.dropdown::after {
+        content: "";
+        position: absolute;
+        top: 56%;
+        right: -12px;
+        width: 7px;
+        height: 7px;
+        background-image: url('../img/decoration-icons/menu-dropdown-arrow.svg');
+        @extend %background;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__contacts,
+  &__contacts-links,
+  &__info,
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    &-item {
+      &:not(:last-child) {
+        margin-right: 17px;
+      }
+    }
+
+    &-link {
+      &:hover {
+        color: var(--button-accent-color);
+      }
+    }
+
+    &-btn {
+      padding: 14px 17px;
+      @extend %openSans-800;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: rgba($color: var(--blue-color-test), $alpha: .4);
+      transform: translateY(-6px);
+
+      &:hover {
+        color: var(--brown-color);
+        background: rgba($color: var(--button-accent-color-test), $alpha: 1);
+      }
+    }
+  }
+
+  &__logo {
+    transform: translateY(-3px);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+    padding-top: 46px;
+
+    @include phone {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 0;
+    }
+  }
+
+  &__hero {
+    position: relative;
+    max-width: 500px;
+    transform: translateY(-13px);
+
+    @include phone {
+      text-align: center;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -13px;
+      right: -39px;
+      width: 163px;
+      height: 108px;
+      background-image: url('../img/decoration-icons/long-arrow.svg');
+      @extend %background;
+
+      @include desktop-below {
+        display: none;
+      }
+    }
+  }
+
+  &__slogan {
+    margin-bottom: 40px;
+    @extend %playfair-900;
+    font-size: 48px;
+    line-height: 1.33;
+
+    @include tablet-desktop {
+      font-size: 42px;
+    }
+
+    @include tablet-landscape {
+      font-size: 38px;
+    }
+
+    @include tablet-portrait {
+      font-size: 30px;
+    }
+
+    @include phone {
+      margin-bottom: 20px;
+    }
+
+    @include phone-below {
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    max-width: 345px;
+    @extend %openSans-700;
+    font-size: 24px;
+    line-height: 1.4;
+
+    @include tablet-landscape {
+      font-size: 20px;
+    }
+
+    @include tablet-portrait {
+      font-size: 14px;
+    }
+
+    @include phone {
+      max-width: none;
+      margin-bottom: 10px;
+    }
+  }
 }

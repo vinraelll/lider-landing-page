@@ -1,0 +1,65 @@
+.news {
+  padding-top: 24px;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__item {
+    max-width: 370px;
+
+    &-photo {
+      max-height: 277px;
+      margin-bottom: 20px;
+      @extend %background;
+    }
+
+    &-content {
+      position: relative;
+      padding: 0 20px;
+      color: var(--brown-color);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 4px;
+        height: 78px;
+        background-color: var(--blue-color);
+      }
+    }
+
+    &-date {
+      margin-bottom: 10px;
+      @extend %openSans-600;
+      font-size: 12px;
+      line-height: 1.33;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--grey-color);
+    }
+
+    &-title {
+      margin-bottom: 15px;
+      @extend %playfair-700;
+      font-size: 18px;
+      line-height: 1.33;
+    }
+
+    &-text {
+      font-size: 13px;
+      line-height: 1.61;
+    }
+
+    &-title,
+    &-text {
+      white-space: pre-wrap; /* Запрещаем перенос строк */
+      // overflow: hidden;
+      text-overflow: ellipsis;
+      max-height: 47px;
+
+      // ОТДЕБАЖИТЬ 
+    }
+  }
+}

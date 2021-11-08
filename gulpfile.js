@@ -23,20 +23,20 @@ function build() {
 }
 
 function images() {
-  return src('app/images/**/*.*')
+  return src('app/img/**/*.*')
 
   .pipe(imagemin([
     imagemin.gifsicle({interlaced: true}),
     imagemin.mozjpeg({quality: 75, progressive: true}),
     imagemin.optipng({optimizationLevel: 5}),
     imagemin.svgo({
-        plugins: [
-            {removeViewBox: true},
-            {cleanupIDs: false}
-        ]
+      plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
+      ]
     })
   ]))
-  .pipe(dest('dist/images'))
+  .pipe(dest('dist/img'))
 }
 
 function browsersync() {
@@ -48,11 +48,10 @@ function browsersync() {
 }
 
 function styles() {
-  return src(
-    [
-      'app/scss/style.scss',
-    ]
-    )
+  return src([
+    'app/scss/style.scss',
+    'node_modules/swiper/swiper-bundle.min.css'
+  ])
 
   .pipe(scss({outputStyle: 'compressed'}))
   .pipe(concat('style.min.css'))
@@ -66,6 +65,7 @@ function styles() {
 
 function scripts() {
   return src([
+    'node_modules/swiper/swiper-bundle.min.js',
     'app/js/main.js'
   ])
 

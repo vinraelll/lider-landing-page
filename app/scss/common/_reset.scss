@@ -50,11 +50,13 @@ select {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color, background-color, .3s ease-out;
 }
 
 button {
   padding: 0;
   border: none;
+  color: inherit;
   background-color: transparent;
   outline: transparent;
   transition: color, background-color, .3s ease-out;

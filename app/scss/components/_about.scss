@@ -1,0 +1,55 @@
+.about {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__photo {
+    max-width: 570px;
+  }
+
+  &__title {
+    max-width: 280px;
+    margin-bottom: 50px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--grey-color);
+    margin-bottom: 35px;
+  }
+
+  &__content {
+    max-width: 570px;
+    padding-top: 26px;
+  }
+
+  &__stats {
+    display: flex;
+    font-size: 13px;
+    line-height: 1.38;
+    color: var(--brown-color);
+
+    &-item {
+      max-width: 150px;
+
+      &:nth-child(1) {
+        margin-right: 55px;
+      }
+
+      &:nth-child(2) {
+        margin-right: 65px;
+      }
+    }
+
+    &-amount {
+      display: block;
+      margin-bottom: 12px;
+      @extend %openSans-300;
+      font-size: 64px;
+      line-height: 1.33;
+      color: var(--blue-color);
+    }
+  }
+}
