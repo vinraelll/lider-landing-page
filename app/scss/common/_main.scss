@@ -54,6 +54,10 @@ body {
   }
 }
 
+.scrollLock {
+  overflow: hidden;
+}
+
 // only for screenreaders //
 .sr-only {
   position: absolute;
