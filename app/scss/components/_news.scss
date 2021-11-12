@@ -6,12 +6,22 @@
   }
 
   &__item {
+    min-width: 0;
     max-width: 370px;
 
+    @include tablet-landscape {
+      max-width: 100%;
+      width: 100%;
+    }
+
     &-photo {
-      max-height: 277px;
       margin-bottom: 20px;
-      @extend %background;
+      
+      & > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     }
 
     &-content {
@@ -62,4 +72,10 @@
       // ОТДЕБАЖИТЬ 
     }
   }
+}
+
+.swiper-button-next.news__button-next,
+.swiper-button-prev.news__button-prev {
+  color: var(--white-color);
+  top: 34%;
 }

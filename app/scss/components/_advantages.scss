@@ -3,11 +3,25 @@
 
   &__title {
     margin-bottom: 50px;
+
+    @include phone {
+      margin-bottom: 20px;
+    }
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
+
+    @include desktop-below {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include tablet-landscape {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -15,6 +29,26 @@
     width: 100%;
     padding: 61px 30px;
     background-color: var(--light-grey-color);
+
+    @include desktop-below {
+      max-width: 400px;
+      margin: 0 auto 50px;
+    }
+
+    @include phone {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      @include phone {
+        margin: 0 auto 20px;
+        padding: 40px 30px;
+      }
+    }
 
     &-title {
       position: relative;
@@ -34,6 +68,11 @@
         height: 36px;
         background-repeat: no-repeat;
         background-position: center;
+
+        @include phone {
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
 
       &::after {
@@ -44,6 +83,11 @@
         width: 30px;
         height: 3px;
         background-color: var(--title-color);
+
+        @include phone {
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
 
       &.complex-support::before {

@@ -1,8 +1,13 @@
 .inspiration {
   padding: 100px 0;
-  @extend %background;
+  background-color: rgba(#2B2B2B, 1);
+  background-size: cover;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+
+  @include tablet-portrait {
+    padding: 50px 0;
+  }
 
   &__overlay {
     position: absolute;
@@ -11,11 +16,21 @@
     bottom: -200px;
     width: 5000px;
     background-color: rgba($color: var(--title-color-test), $alpha: .7);
+
+    @include desktop-below {
+      display: none;
+    }
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
+
+    @include tablet-portrait {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__slogan {
@@ -27,6 +42,26 @@
     line-height: 1.33;
     color: var(--white-color);
 
+    @include desktop-below {
+      max-width: 450px;
+      font-size: 42px;
+    }
+
+    @include tablet-landscape {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      font-size: 28px;
+    }
+
+    @include tablet-portrait {
+      margin-bottom: 20px;
+    }
+
+    @include phone-below {
+      font-size: 20px;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -36,6 +71,10 @@
       height: 108px;
       background-image: url('../img/decoration-icons/long-arrow.svg');
       @extend %background;
+
+      @include tablet-desktop {
+        display: none;
+      }
     }
   }
 }

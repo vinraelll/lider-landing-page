@@ -19,6 +19,14 @@ body {
 
 .section-margin-bottom {
   margin-bottom: 100px;
+
+  @include tablet-landscape {
+    margin-bottom: 50px;
+  }
+
+  @include phone {
+    margin-bottom: 25px;
+  }
 }
 
 .title {
@@ -28,6 +36,18 @@ body {
   line-height: 1.33;
   color: var(--title-color);
 
+  @include desktop-below {
+    font-size: 32px;
+  }
+
+  @include tablet-desktop {
+    font-size: 28px;
+  }
+
+  @include tablet-landscape {
+    font-size: 22px;
+  }
+
   &-dash-left::before {
     content: "";
     position: absolute;
@@ -36,6 +56,10 @@ body {
     width: 30px;
     height: 3px;
     background-color: var(--blue-color);
+
+    @include desktop-below {
+      top: -16px;
+    }
   }
 
   &-dash-center {

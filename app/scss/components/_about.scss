@@ -2,15 +2,49 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+
+    @include desktop-below {
+      justify-content: center;
+    }
+
+    @include tablet-landscape {
+      flex-wrap: wrap-reverse;
+    }
   }
 
   &__photo {
     max-width: 570px;
+
+    @include desktop-below {
+      max-width: 520px;
+      margin-right: 25px;
+    }
+
+    @include tablet-desktop {
+      max-width: 450px;
+    }
+
+    @include tablet-landscape {
+      max-width: 380px;
+    }
+
+    @include tablet-landscape {
+      max-width: 100%;
+      margin: 0;
+    }
   }
 
   &__title {
     max-width: 280px;
     margin-bottom: 50px;
+
+    @include desktop-below {
+      margin-bottom: 10px;
+    }
+
+    @include tablet-landscape {
+      max-width: none;
+    }
   }
 
   &__text {
@@ -18,11 +52,43 @@
     line-height: 1.9;
     color: var(--grey-color);
     margin-bottom: 35px;
+
+    @include desktop-below {
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    @include tablet-desktop {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    @include tablet-landscape {
+      font-size: 12px;
+    }
   }
 
   &__content {
     max-width: 570px;
     padding-top: 26px;
+
+    @include desktop-below {
+      max-width: 520px;
+      padding-top: 18px;
+    }
+
+    @include tablet-desktop {
+      max-width: 450px;
+    }
+
+    @include tablet-landscape {
+      max-width: 380px;
+    }
+
+    @include tablet-landscape {
+      max-width: 90%;
+      margin-bottom: 20px;
+    }
   }
 
   &__stats {
@@ -31,15 +97,41 @@
     line-height: 1.38;
     color: var(--brown-color);
 
+    @include tablet-landscape {
+      justify-content: center;
+    }
+
+    @include phone {
+      flex-wrap: wrap;
+    }
+
     &-item {
       max-width: 150px;
 
+      @include tablet-landscape {
+        font-size: 12px;
+      }
+
+      @include phone {
+        max-width: none;
+        width: 100%;
+        text-align: center;
+      }
+
       &:nth-child(1) {
         margin-right: 55px;
+
+        @include phone {
+          margin: 0 0 30px 0;
+        }
       }
 
       &:nth-child(2) {
         margin-right: 65px;
+
+        @include phone {
+          margin: 0 0 30px 0;
+        }
       }
     }
 
@@ -50,6 +142,24 @@
       font-size: 64px;
       line-height: 1.33;
       color: var(--blue-color);
+
+      @include desktop-below {
+        margin-bottom: 4px;
+        font-size: 58px;
+      }
+
+      @include tablet-desktop {
+        font-size: 50px;
+        margin-bottom: 0;
+      }
+
+      @include tablet-landscape {
+        font-size: 38px;
+      }
+
+      @include tablet-landscape {
+        font-size: 64px;
+      }
     }
   }
 }

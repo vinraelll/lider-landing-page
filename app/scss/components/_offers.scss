@@ -2,22 +2,55 @@
   padding: 100px 0;
   background-color: var(--light-grey-color);
 
+  @include tablet-desktop {
+    padding: 50px 0;
+  }
+
   &__title {
     margin-bottom: 45px;
+
+    @include desktop-below {
+      margin-bottom: 40px;
+    }
+
+    @include tablet-desktop {
+      margin-bottom: 15px;
+    }
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
+
+    @include tablet-landscape {
+      flex-wrap: wrap
+    }
   }
 
   &__content {
     max-width: 480px;
     margin-top: 48px;
+
+    @include desktop-below {
+      max-width: 470px;
+    }
+
+    @include tablet-desktop {
+      margin-top: 10px;
+    }
+
+    @include tablet-landscape {
+      max-width: 100%;
+      margin: 0 auto 30px;
+    }
   }
 
   &__list {
     max-height: 360px;
+
+    @include phone {
+      max-height: 450px;
+    }
 
     &-item {
       display: flex;
@@ -25,6 +58,10 @@
       justify-content: space-between;
       padding-left: 17px;
       border-left: 4px solid var(--blue-color);
+
+      @include phone {
+        flex-direction: column;
+      }
 
       &-info {
         display: flex;
@@ -48,6 +85,10 @@
         font-size: 24px;
         line-height: 1.33;
         color: var(--brown-color);
+
+        @include phone {
+          font-size: 20px;
+        }
       }
 
       &-details {
@@ -102,5 +143,19 @@
 
   &__img {
     max-width: 575px;
+
+    @include desktop-below {
+      max-width: 535px;
+    }
+
+    @include tablet-desktop {
+      max-width: 400px;
+      align-self: center;
+    }
+
+    @include tablet-landscape {
+      max-width: 100%;
+      margin: 0 auto;
+    }
   }
 }
